@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="form-box">
+  <form #formRef="ngForm">
+    <div class="form-group">
+      <label for="problemName">Problem Name</label>
+      <input type="text" class="form-control" id="problemName"
+             required placeholder="Problem name"
+             [(ngModel)]="newProblem.name" name="problemName">
+          </div>
+    <div class="form-group">
+      <label for="problemDesc">Problem Description</label>
+      <textarea type="text" class="form-control" id="problemDesc"
+             required placeholder="Problem description" name="problemDesc" 
+             [(ngModel)]="newProblem.desc" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="difficulty">Difficulty</label>
+      <select class="form-control" id="difficulty" name="difficulty"
+              [(ngModel)]="newProblem.difficulty">
+        <option *ngFor="let difficulty of difficulties" [value]="difficulty">
+          {{difficulty}}
+        </option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary pull-right"
+                [disabled]="!formRef.form.valid"
+                (click)="addProblem()">
+          Add Problem
+        </button>
+      </div>
+    </div>
+    <br/>
+
+  </form>
+  </div>  
+</div>

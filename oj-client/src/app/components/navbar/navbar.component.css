@@ -1,0 +1,12 @@
+.navbar-brand img {
+  height: 100%;
+  padding: 8px;
+  width: auto;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand span {
+  padding-right: 8px;
+  color: #F26551;
+}
