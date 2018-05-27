@@ -1,6 +1,6 @@
-#Codegether
+# Codegether
 
-###Description
+### Description
 A single-page web application for practicing algorithm problems, which supports multiple users editing the same problem simultaneously through ACE, Socket.io, and Redis.
 
 Angular based front end which allows users to add / review problems, and stored data in MongoDB. 
@@ -8,13 +8,13 @@ Angular based front end which allows users to add / review problems, and stored 
 Docker based code execution service using Flask.  
 
 
-###Run the program
+### Run the program
   
 `bash ./launch.sh`
 
 Remember to `npm install`  
 
-###Requirements  
+### Requirements  
 
 * NodeJS
 * Redis
