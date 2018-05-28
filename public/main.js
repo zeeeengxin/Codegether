@@ -344,7 +344,7 @@ module.exports = ".navbar-brand img {\n  height: 100%;\n  padding: 8px;\n  width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" routerLink=\"codegether/problems\"><span><img alt=\"Brand\" src=\"../../assets/favicon.ico\">Codegether</span></a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a routerLink=\"codegether/problems/new\">Add Problem<span class=\"sr-only\">(current)</span></a></li>\n      </ul>\n      <form class=\"navbar-form navbar-left\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n        </div>\n        <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n      </form>\n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n  </nav>\n</div>\n"
+module.exports = "<div class=\"container\">\n<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" routerLink=\"/codegether/problems\"><span><img alt=\"Brand\" src=\"../../codegether/assets/favicon.ico\">Codegether</span></a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a routerLink=\"/codegether/problems/new\">Add Problem<span class=\"sr-only\">(current)</span></a></li>\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n  </nav>\n</div>\n"
 
 /***/ }),
 
@@ -407,7 +407,7 @@ module.exports = ".form-box {\n  width: 60%;\n  margin: auto;\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"form-box\">\n  <form #formRef=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"problemName\">Problem Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"problemName\"\n             required placeholder=\"Problem name\"\n             [(ngModel)]=\"newProblem.name\" name=\"problemName\">\n          </div>\n    <div class=\"form-group\">\n      <label for=\"problemDesc\">Problem Description</label>\n      <textarea type=\"text\" class=\"form-control\" id=\"problemDesc\"\n             required placeholder=\"Problem description\" name=\"problemDesc\" \n             [(ngModel)]=\"newProblem.desc\" rows=\"6\"></textarea>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"difficulty\">Difficulty</label>\n      <select class=\"form-control\" id=\"difficulty\" name=\"difficulty\"\n              [(ngModel)]=\"newProblem.difficulty\">\n        <option *ngFor=\"let difficulty of difficulties\" [value]=\"difficulty\">\n          {{difficulty}}\n        </option>\n      </select>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <button type=\"submit\" class=\"btn btn-primary pull-right\"\n                [disabled]=\"!formRef.form.valid\"\n                (click)=\"addProblem()\">\n          Add Problem\n        </button>\n      </div>\n    </div>\n    <br/>\n\n  </form>\n  </div>  \n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"form-box\">\n  <form #formRef=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"problemName\">Problem Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"problemName\"\n             required placeholder=\"Problem name\"\n             [(ngModel)]=\"newProblem.name\" name=\"problemName\">\n          </div>\n    <div class=\"form-group\">\n      <label for=\"problemDesc\">Problem Description</label>\n      <textarea type=\"text\" class=\"form-control\" id=\"problemDesc\"\n             required placeholder=\"Problem description\" name=\"problemDesc\" \n             [(ngModel)]=\"newProblem.desc\" rows=\"6\"></textarea>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"difficulty\">Difficulty</label>\n      <select class=\"form-control\" id=\"difficulty\" name=\"difficulty\"\n              [(ngModel)]=\"newProblem.difficulty\">\n        <option *ngFor=\"let difficulty of difficulties\" [value]=\"difficulty\">\n          {{difficulty}}\n        </option>\n      </select>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <button type=\"button\" class=\"btn btn-primary pull-right\"\n                [disabled]=\"!formRef.form.valid\"\n                (click)=\"addProblem()\">\n          Add Problem\n        </button>\n      </div>\n    </div>\n    <br/>\n\n  </form>\n  </div>  \n</div>\n"
 
 /***/ }),
 
@@ -563,7 +563,7 @@ module.exports = ".difficulty {\n  min-width: 65px;\n  margin-right: 10px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"list-group\">\n    <a class=\"list-group-item\" *ngFor=\"let problem of problems\"\n      [routerLink]=\"['codegether/problems', problem.id]\">\n      <span class=\"{{'pull-left label difficulty diff-' + problem.difficulty.toLocaleLowerCase()}}\">\n\t{{ problem.difficulty }}\n      </span>\n      <strong class=\"title\">{{problem.id}}. {{problem.name}}</strong>\n    </a>\n  </div>\n</div>\n\n\n"
+module.exports = "<div class=\"container\">\n  <div class=\"list-group\">\n    <a class=\"list-group-item\" *ngFor=\"let problem of problems\"\n      [routerLink]=\"['/codegether/problems', problem.id]\">\n      <span class=\"{{'pull-left label difficulty diff-' + problem.difficulty.toLocaleLowerCase()}}\">\n\t{{ problem.difficulty }}\n      </span>\n      <strong class=\"title\">{{problem.id}}. {{problem.name}}</strong>\n    </a>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -645,7 +645,8 @@ var CollaborationService = /** @class */ (function () {
     function CollaborationService() {
     }
     CollaborationService.prototype.init = function (editor, sessionId) {
-        this.collaborationSocket = io(window.location.origin, { query: 'sessionId=' + sessionId });
+        this.collaborationSocket = io(window.location.origin, { path: '/codegether/socket.io', query: 'sessionId=' + sessionId });
+        console.log("collaboration service init");
         this.collaborationSocket.on('change', function (delta) {
             delta = JSON.parse(delta);
             editor.lastAppliedChange = delta;

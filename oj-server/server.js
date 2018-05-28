@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const http = require('http');
-const socketIO = require('socket.io');
-const io = socketIO();
+const io = require('socket.io')();
 const editorSocketService = require('./services/editorSocketService')(io);
 
 const mongoose = require('mongoose');
